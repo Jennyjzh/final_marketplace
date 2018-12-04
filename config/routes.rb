@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/comments/new", { :controller => "comments", :action => "new_form" })
   post("/create_comment", { :controller => "comments", :action => "create_row" })
+  post("/create_comment_from_item", { :controller => "comments", :action => "create_row_from_item" })
 
   # READ
   get("/comments", { :controller => "comments", :action => "index" })
@@ -47,6 +48,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/bookmarks/new", { :controller => "bookmarks", :action => "new_form" })
   post("/create_bookmark", { :controller => "bookmarks", :action => "create_row" })
+  post("/create_bookmark_from_item", { :controller => "bookmarks", :action => "create_row_from_item" })
 
   # READ
   get("/bookmarks", { :controller => "bookmarks", :action => "index" })
@@ -68,6 +70,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/transactions/new", { :controller => "transactions", :action => "new_form" })
   post("/create_transaction", { :controller => "transactions", :action => "create_row" })
+  post("/create_transaction_from_item", { :controller => "transactions", :action => "create_row_from_item" })
 
   # READ
   get("/transactions", { :controller => "transactions", :action => "index" })
@@ -128,6 +131,9 @@ Rails.application.routes.draw do
   # CREATE
   get("/items/new", { :controller => "items", :action => "new_form" })
   post("/create_item", { :controller => "items", :action => "create_row" })
+  post("/create_item_from_item_type", { :controller => "items", :action => "create_row_from_item_type" })
+  post("/create_item_from_status", { :controller => "items", :action => "create_row_from_status" })
+  post("/create_item_from_location", { :controller => "items", :action => "create_row_from_location" })
 
   # READ
   get("/items", { :controller => "items", :action => "index" })

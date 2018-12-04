@@ -32,6 +32,21 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def create_row_from_item
+    @bookmark = Bookmark.new
+
+    @bookmark.item_id = params.fetch("item_id")
+    @bookmark.user_id = params.fetch("user_id")
+
+    if @bookmark.valid?
+      @bookmark.save
+
+      redirect_to("/items/#{@bookmark.item_id}", notice: "Bookmark created successfully.")
+    else
+      render("bookmark_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @bookmark = Bookmark.find(params.fetch("prefill_with_id"))
 

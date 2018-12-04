@@ -6,6 +6,7 @@ class StatusesController < ApplicationController
   end
 
   def show
+    @item = Item.new
     @status = Status.find(params.fetch("id_to_display"))
 
     render("status_templates/show.html.erb")

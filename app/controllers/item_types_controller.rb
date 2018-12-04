@@ -6,6 +6,7 @@ class ItemTypesController < ApplicationController
   end
 
   def show
+    @item = Item.new
     @item_type = ItemType.find(params.fetch("id_to_display"))
 
     render("item_type_templates/show.html.erb")

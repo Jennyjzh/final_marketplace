@@ -6,6 +6,9 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @bookmark = Bookmark.new
+    @comment = Comment.new
+    @transaction = Transaction.new
     @item = Item.find(params.fetch("id_to_display"))
 
     render("item_templates/show.html.erb")
@@ -34,6 +37,72 @@ class ItemsController < ApplicationController
       @item.save
 
       redirect_back(:fallback_location => "/items", :notice => "Item created successfully.")
+    else
+      render("item_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_location
+    @item = Item.new
+
+    @item.title = params.fetch("title")
+    @item.description = params.fetch("description")
+    @item.seller_id = params.fetch("seller_id")
+    @item.price = params.fetch("price")
+    @item.address = params.fetch("address")
+    @item.photo = params.fetch("photo")
+    @item.location_id = params.fetch("location_id")
+    @item.status_id = params.fetch("status_id")
+    @item.item_type_id = params.fetch("item_type_id")
+
+    if @item.valid?
+      @item.save
+
+      redirect_to("/locations/#{@item.location_id}", notice: "Item created successfully.")
+    else
+      render("item_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_status
+    @item = Item.new
+
+    @item.title = params.fetch("title")
+    @item.description = params.fetch("description")
+    @item.seller_id = params.fetch("seller_id")
+    @item.price = params.fetch("price")
+    @item.address = params.fetch("address")
+    @item.photo = params.fetch("photo")
+    @item.location_id = params.fetch("location_id")
+    @item.status_id = params.fetch("status_id")
+    @item.item_type_id = params.fetch("item_type_id")
+
+    if @item.valid?
+      @item.save
+
+      redirect_to("/statuses/#{@item.status_id}", notice: "Item created successfully.")
+    else
+      render("item_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_item_type
+    @item = Item.new
+
+    @item.title = params.fetch("title")
+    @item.description = params.fetch("description")
+    @item.seller_id = params.fetch("seller_id")
+    @item.price = params.fetch("price")
+    @item.address = params.fetch("address")
+    @item.photo = params.fetch("photo")
+    @item.location_id = params.fetch("location_id")
+    @item.status_id = params.fetch("status_id")
+    @item.item_type_id = params.fetch("item_type_id")
+
+    if @item.valid?
+      @item.save
+
+      redirect_to("/item_types/#{@item.item_type_id}", notice: "Item created successfully.")
     else
       render("item_templates/new_form_with_errors.html.erb")
     end
