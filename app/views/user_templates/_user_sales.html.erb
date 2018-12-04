@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Sales
+
+    <a data-toggle="collapse" href="#user_sales_new_form">
+      Add transaction
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.sales.each do |transaction| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/transactions/<%= transaction.id %>">
+          <%= transaction.buyer_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

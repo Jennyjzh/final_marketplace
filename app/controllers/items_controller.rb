@@ -67,6 +67,38 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy_row_from_poster
+    @item = Item.find(params.fetch("id_to_remove"))
+
+    @item.destroy
+
+    redirect_to("/users/#{@item.seller_id}", notice: "Item deleted successfully.")
+  end
+
+  def destroy_row_from_location
+    @item = Item.find(params.fetch("id_to_remove"))
+
+    @item.destroy
+
+    redirect_to("/locations/#{@item.location_id}", notice: "Item deleted successfully.")
+  end
+
+  def destroy_row_from_status
+    @item = Item.find(params.fetch("id_to_remove"))
+
+    @item.destroy
+
+    redirect_to("/statuses/#{@item.status_id}", notice: "Item deleted successfully.")
+  end
+
+  def destroy_row_from_item_type
+    @item = Item.find(params.fetch("id_to_remove"))
+
+    @item.destroy
+
+    redirect_to("/item_types/#{@item.item_type_id}", notice: "Item deleted successfully.")
+  end
+
   def destroy_row
     @item = Item.find(params.fetch("id_to_remove"))
 

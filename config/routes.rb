@@ -37,6 +37,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_comment/:id_to_remove", { :controller => "comments", :action => "destroy_row" })
+  get("/delete_comment_from_item/:id_to_remove", { :controller => "comments", :action => "destroy_row_from_item" })
+  get("/delete_comment_from_user/:id_to_remove", { :controller => "comments", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -56,6 +58,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_bookmark/:id_to_remove", { :controller => "bookmarks", :action => "destroy_row" })
+  get("/delete_bookmark_from_item/:id_to_remove", { :controller => "bookmarks", :action => "destroy_row_from_item" })
+  get("/delete_bookmark_from_user/:id_to_remove", { :controller => "bookmarks", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -75,6 +79,9 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_transaction/:id_to_remove", { :controller => "transactions", :action => "destroy_row" })
+  get("/delete_transaction_from_item/:id_to_remove", { :controller => "transactions", :action => "destroy_row_from_item" })
+  get("/delete_transaction_from_seller/:id_to_remove", { :controller => "transactions", :action => "destroy_row_from_seller" })
+  get("/delete_transaction_from_buyer/:id_to_remove", { :controller => "transactions", :action => "destroy_row_from_buyer" })
 
   #------------------------------
 
@@ -132,6 +139,10 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_item/:id_to_remove", { :controller => "items", :action => "destroy_row" })
+  get("/delete_item_from_item_type/:id_to_remove", { :controller => "items", :action => "destroy_row_from_item_type" })
+  get("/delete_item_from_status/:id_to_remove", { :controller => "items", :action => "destroy_row_from_status" })
+  get("/delete_item_from_location/:id_to_remove", { :controller => "items", :action => "destroy_row_from_location" })
+  get("/delete_item_from_poster/:id_to_remove", { :controller => "items", :action => "destroy_row_from_poster" })
 
   #------------------------------
 
