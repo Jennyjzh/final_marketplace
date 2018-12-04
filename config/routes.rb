@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Status resource:
+
+  # CREATE
+  get("/statuses/new", { :controller => "statuses", :action => "new_form" })
+  post("/create_status", { :controller => "statuses", :action => "create_row" })
+
+  # READ
+  get("/statuses", { :controller => "statuses", :action => "index" })
+  get("/statuses/:id_to_display", { :controller => "statuses", :action => "show" })
+
+  # UPDATE
+  get("/statuses/:prefill_with_id/edit", { :controller => "statuses", :action => "edit_form" })
+  post("/update_status/:id_to_modify", { :controller => "statuses", :action => "update_row" })
+
+  # DELETE
+  get("/delete_status/:id_to_remove", { :controller => "statuses", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Location resource:
 
   # CREATE

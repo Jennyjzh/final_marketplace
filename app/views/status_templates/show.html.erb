@@ -1,0 +1,55 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Status #<%= @status.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/statuses" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link status start -->
+      <div class="col">
+        <a href="/statuses/<%= @status.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit status
+        </a>
+      </div>
+      <!-- Edit link status end -->
+
+      <!-- Delete link status start -->
+      <div class="col">
+        <a href="/delete_status/<%= @status.id %>" class="btn btn-block btn-outline-secondary">
+          Delete status
+        </a>
+      </div>
+      <!-- Delete link status end -->
+    </div>
+
+    <dl>
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@status.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@status.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
