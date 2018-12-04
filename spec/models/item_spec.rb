@@ -4,6 +4,8 @@ RSpec.describe Item, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:item_type) }
+
     it { should belong_to(:status) }
 
     it { should belong_to(:location) }

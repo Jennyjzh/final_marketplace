@@ -1,6 +1,8 @@
 class Item < ApplicationRecord
   # Direct associations
 
+  belongs_to :item_type
+
   belongs_to :status
 
   belongs_to :location
