@@ -1,6 +1,7 @@
 class TransactionsController < ApplicationController
   def index
-    @transactions = Transaction.page(params[:page]).per(10)
+    @q = Transaction.ransack(params[:q])
+    @transactions = @q.result(:distinct => true).includes(:buyer, :seller, :item).page(params[:page]).per(10)
 
     render("transaction_templates/index.html.erb")
   end

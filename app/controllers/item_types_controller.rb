@@ -1,6 +1,7 @@
 class ItemTypesController < ApplicationController
   def index
-    @item_types = ItemType.page(params[:page]).per(10)
+    @q = ItemType.ransack(params[:q])
+    @item_types = @q.result(:distinct => true).includes(:items).page(params[:page]).per(10)
 
     render("item_type_templates/index.html.erb")
   end

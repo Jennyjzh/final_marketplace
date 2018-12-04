@@ -10,7 +10,8 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.page(params[:page]).per(10)
+    @q = Item.ransack(params[:q])
+    @items = @q.result(:distinct => true).includes(:poster, :transactions, :comments, :bookmarks, :location, :status, :item_type).page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@items.where.not(:address_latitude => nil)) do |item, marker|
       marker.lat item.address_latitude
       marker.lng item.address_longitude

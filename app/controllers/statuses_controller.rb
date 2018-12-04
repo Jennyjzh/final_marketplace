@@ -1,6 +1,7 @@
 class StatusesController < ApplicationController
   def index
-    @statuses = Status.page(params[:page]).per(10)
+    @q = Status.ransack(params[:q])
+    @statuses = @q.result(:distinct => true).includes(:items).page(params[:page]).per(10)
 
     render("status_templates/index.html.erb")
   end
