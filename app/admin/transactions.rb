@@ -1,4 +1,6 @@
 ActiveAdmin.register Transaction do
+
+ permit_params :buyer_id, :seller_id, :item_id, :sale_price, :notes
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
