@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Transaction resource:
+
+  # CREATE
+  get("/transactions/new", { :controller => "transactions", :action => "new_form" })
+  post("/create_transaction", { :controller => "transactions", :action => "create_row" })
+
+  # READ
+  get("/transactions", { :controller => "transactions", :action => "index" })
+  get("/transactions/:id_to_display", { :controller => "transactions", :action => "show" })
+
+  # UPDATE
+  get("/transactions/:prefill_with_id/edit", { :controller => "transactions", :action => "edit_form" })
+  post("/update_transaction/:id_to_modify", { :controller => "transactions", :action => "update_row" })
+
+  # DELETE
+  get("/delete_transaction/:id_to_remove", { :controller => "transactions", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Status resource:
 
   # CREATE
