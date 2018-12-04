@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
+
   # Direct associations
 
   belongs_to :item_type

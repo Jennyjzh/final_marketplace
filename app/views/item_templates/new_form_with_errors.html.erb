@@ -17,7 +17,7 @@
 <hr>
 
 <!-- Form item start -->
-<form action="/create_item" method="post">
+<form action="/create_item" method="post" enctype="multipart/form-data">
 <!-- Form item end -->
 
   <!-- Label and input for title start -->
@@ -87,7 +87,7 @@
     </label>
 
     <!-- Input for photo start -->
-    <input type="text" id="photo" name="photo" class="form-control" value="<%= @item.photo %>">
+    <input type="file" id="photo" name="photo" class="form-control">
     <!-- Input for photo end -->
   </div>
   <!-- Label and input for photo end -->
