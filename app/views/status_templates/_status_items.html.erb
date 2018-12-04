@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_item_from_status/<%= item.id %>">
-          Delete
-        </a>
+        <%if current_user == item.poster %>
+          <a href="/delete_item_from_status/<%= item.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>
