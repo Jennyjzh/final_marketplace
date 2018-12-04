@@ -1,6 +1,10 @@
 class Item < ApplicationRecord
   # Direct associations
 
+  belongs_to :poster,
+             :class_name => "User",
+             :foreign_key => "seller_id"
+
   # Indirect associations
 
   # Validations
