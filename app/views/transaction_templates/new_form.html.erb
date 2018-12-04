@@ -28,7 +28,7 @@
     </label>
 
     <!-- Input for seller_id start -->
-    <input type="text" id="seller_id" name="seller_id" class="form-control">
+    <%= select_tag(:seller_id, options_from_collection_for_select(User.all, :id, :email, @transaction.seller_id), :class => "form-control") %>
     <!-- Input for seller_id end -->
   </div>
   <!-- Label and input for seller_id end -->
