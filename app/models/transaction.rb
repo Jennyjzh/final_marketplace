@@ -1,6 +1,8 @@
 class Transaction < ApplicationRecord
   # Direct associations
 
+  belongs_to :item
+
   belongs_to :seller,
              :class_name => "User"
 

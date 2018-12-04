@@ -4,6 +4,8 @@ RSpec.describe Item, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:transactions) }
+
     it { should belong_to(:poster) }
 
     end
