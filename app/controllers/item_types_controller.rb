@@ -1,6 +1,6 @@
 class ItemTypesController < ApplicationController
   def index
-    @item_types = ItemType.all
+    @item_types = ItemType.page(params[:page]).per(10)
 
     render("item_type_templates/index.html.erb")
   end
