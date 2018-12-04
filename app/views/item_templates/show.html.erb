@@ -1,0 +1,136 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Item #<%= @item.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/items" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link item start -->
+      <div class="col">
+        <a href="/items/<%= @item.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit item
+        </a>
+      </div>
+      <!-- Edit link item end -->
+
+      <!-- Delete link item start -->
+      <div class="col">
+        <a href="/delete_item/<%= @item.id %>" class="btn btn-block btn-outline-secondary">
+          Delete item
+        </a>
+      </div>
+      <!-- Delete link item end -->
+    </div>
+
+    <dl>
+      <dt>
+        Title
+      </dt>
+      <!-- Display title start -->
+      <dd>
+        <%= @item.title %>
+      </dd>
+      <!-- Display title end -->
+
+      <dt>
+        Description
+      </dt>
+      <!-- Display description start -->
+      <dd>
+        <%= @item.description %>
+      </dd>
+      <!-- Display description end -->
+
+      <dt>
+        Seller
+      </dt>
+      <!-- Display seller_id start -->
+      <dd>
+        <%= @item.seller_id %>
+      </dd>
+      <!-- Display seller_id end -->
+
+      <dt>
+        Price
+      </dt>
+      <!-- Display price start -->
+      <dd>
+        <%= @item.price %>
+      </dd>
+      <!-- Display price end -->
+
+      <dt>
+        Address
+      </dt>
+      <!-- Display address start -->
+      <dd>
+        <%= @item.address %>
+      </dd>
+      <!-- Display address end -->
+
+      <dt>
+        Photo
+      </dt>
+      <!-- Display photo start -->
+      <dd>
+        <%= @item.photo %>
+      </dd>
+      <!-- Display photo end -->
+
+      <dt>
+        Location
+      </dt>
+      <!-- Display location_id start -->
+      <dd>
+        <%= @item.location_id %>
+      </dd>
+      <!-- Display location_id end -->
+
+      <dt>
+        Status
+      </dt>
+      <!-- Display status_id start -->
+      <dd>
+        <%= @item.status_id %>
+      </dd>
+      <!-- Display status_id end -->
+
+      <dt>
+        Item type
+      </dt>
+      <!-- Display item_type_id start -->
+      <dd>
+        <%= @item.item_type_id %>
+      </dd>
+      <!-- Display item_type_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@item.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@item.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
