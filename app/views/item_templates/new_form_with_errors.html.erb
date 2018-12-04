@@ -111,7 +111,7 @@
     </label>
 
     <!-- Input for status_id start -->
-    <input type="text" id="status_id" name="status_id" class="form-control" value="<%= @item.status_id %>">
+    <%= select_tag(:status_id, options_from_collection_for_select(Status.all, :id, :created_at, @item.status_id), :class => "form-control") %>
     <!-- Input for status_id end -->
   </div>
   <!-- Label and input for status_id end -->
