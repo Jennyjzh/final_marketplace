@@ -1,4 +1,6 @@
 ActiveAdmin.register Item do
+
+ permit_params :title, :description, :seller_id, :price, :address, :photo, :location_id, :status_id, :item_type_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
