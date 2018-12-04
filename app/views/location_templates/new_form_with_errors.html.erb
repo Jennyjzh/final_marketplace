@@ -1,0 +1,32 @@
+<!-- Validation failure messages -->
+<% if @location.present? %>
+  <% if @location.errors.any? %>
+    <% @location.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new location
+</h1>
+
+
+<hr>
+
+<!-- Form location start -->
+<form action="/create_location" method="post">
+<!-- Form location end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create location
+  </button>
+</form>
+
+<hr>
+
+<a href="/locations">
+  Go back
+</a>
