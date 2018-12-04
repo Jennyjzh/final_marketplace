@@ -81,7 +81,7 @@
     </label>
 
     <!-- Input for location_id start -->
-    <input type="text" id="location_id" name="location_id" class="form-control" value="<%= @item.location_id %>">
+    <%= select_tag(:location_id, options_from_collection_for_select(Location.all, :id, :created_at, @item.location_id), :class => "form-control") %>
     <!-- Input for location_id end -->
   </div>
   <!-- Label and input for location_id end -->
