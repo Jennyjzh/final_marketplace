@@ -11,49 +11,39 @@
         </a>
       </div>
 
-      <!-- Edit link item_type start -->
       <div class="col">
         <a href="/item_types/<%= @item_type.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit item type
         </a>
       </div>
-      <!-- Edit link item_type end -->
 
-      <!-- Delete link item_type start -->
       <div class="col">
         <a href="/delete_item_type/<%= @item_type.id %>" class="btn btn-block btn-outline-secondary">
           Delete item type
         </a>
       </div>
-      <!-- Delete link item_type end -->
     </div>
 
     <dl>
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@item_type.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@item_type.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "item_type_templates/item_type_items" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

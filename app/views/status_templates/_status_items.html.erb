@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @status.items.each do |item| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/items/<%= item.id %>">
           <%= item.title %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == item.poster %>
           <a href="/delete_item_from_status/<%= item.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="status_items_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "status_templates/status_items_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

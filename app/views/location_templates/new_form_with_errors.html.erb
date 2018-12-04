@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @location.present? %>
   <% if @location.errors.any? %>
     <% @location.errors.full_messages.each do |message| %>
@@ -16,9 +15,7 @@
 
 <hr>
 
-<!-- Form location start -->
 <form action="/create_location" method="post">
-<!-- Form location end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create location

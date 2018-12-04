@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link item start -->
       <div class="col">
         <% if current_user == @item.poster %>
           <a href="/items/<%= @item.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link item end -->
 
-      <!-- Delete link item start -->
       <div class="col">
         <% if current_user == @item.poster %>
           <a href="/delete_item/<%= @item.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,32 +26,26 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link item end -->
     </div>
 
     <dl>
       <dt>
         Title
       </dt>
-      <!-- Display title start -->
       <dd>
         <%= @item.title %>
       </dd>
-      <!-- Display title end -->
 
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @item.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Seller
       </dt>
-      <!-- Display seller_id start -->
       <dd>
         <% if @item.poster.present? %>
           <a href="/users/<%= @item.seller_id %>">
@@ -62,41 +53,33 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display seller_id end -->
 
       <dt>
         Price
       </dt>
-      <!-- Display price start -->
       <dd>
         <%= @item.price %>
       </dd>
-      <!-- Display price end -->
 
       <dt>
         Address
       </dt>
-      <!-- Display address start -->
       <dd>
         <div>
           <%= render partial: "item_templates/one_photo_map" %>
         </div>
       </dd>
-      <!-- Display address end -->
 
       <dt>
         Photo
       </dt>
-      <!-- Display photo start -->
       <dd>
         <img src="<%= @item.photo %>" class="img-fluid">
       </dd>
-      <!-- Display photo end -->
 
       <dt>
         Location
       </dt>
-      <!-- Display location_id start -->
       <dd>
         <% if @item.location.present? %>
           <a href="/locations/<%= @item.location_id %>">
@@ -104,12 +87,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display location_id end -->
 
       <dt>
         Status
       </dt>
-      <!-- Display status_id start -->
       <dd>
         <% if @item.status.present? %>
           <a href="/statuses/<%= @item.status_id %>">
@@ -117,12 +98,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display status_id end -->
 
       <dt>
         Item type
       </dt>
-      <!-- Display item_type_id start -->
       <dd>
         <% if @item.item_type.present? %>
           <a href="/item_types/<%= @item.item_type_id %>">
@@ -130,30 +109,24 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display item_type_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@item.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@item.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "item_templates/item_transactions" %>
@@ -171,4 +144,3 @@
     <%= render partial: "item_templates/item_bookmarks" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

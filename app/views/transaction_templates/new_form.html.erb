@@ -5,69 +5,47 @@
 
 <hr>
 
-<!-- Form transaction start -->
 <form action="/create_transaction" method="post">
-<!-- Form transaction end -->
 
-  <!-- Label and input for buyer_id start -->
   <div class="form-group">
     <label for="buyer_id">
       Buyer
     </label>
 
-    <!-- Input for buyer_id start -->
     <%= select_tag(:buyer_id, options_from_collection_for_select(User.all, :id, :email, @transaction.buyer_id), :class => "form-control") %>
-    <!-- Input for buyer_id end -->
   </div>
-  <!-- Label and input for buyer_id end -->
 
-  <!-- Label and input for seller_id start -->
   <div class="form-group">
     <label for="seller_id">
       Seller
     </label>
 
-    <!-- Input for seller_id start -->
     <%= select_tag(:seller_id, options_from_collection_for_select(User.all, :id, :email, @transaction.seller_id), :class => "form-control") %>
-    <!-- Input for seller_id end -->
   </div>
-  <!-- Label and input for seller_id end -->
 
-  <!-- Label and input for item_id start -->
   <div class="form-group">
     <label for="item_id">
       Item
     </label>
 
-    <!-- Input for item_id start -->
     <%= select_tag(:item_id, options_from_collection_for_select(Item.all, :id, :title, @transaction.item_id), :class => "form-control") %>
-    <!-- Input for item_id end -->
   </div>
-  <!-- Label and input for item_id end -->
 
-  <!-- Label and input for sale_price start -->
   <div class="form-group">
     <label for="sale_price">
       Sale price
     </label>
 
-    <!-- Input for sale_price start -->
     <input type="text" id="sale_price" name="sale_price" class="form-control">
-    <!-- Input for sale_price end -->
   </div>
-  <!-- Label and input for sale_price end -->
 
-  <!-- Label and input for notes start -->
   <div class="form-group">
     <label for="notes">
       Notes
     </label>
 
-    <!-- Input for notes start -->
     <input type="text" id="notes" name="notes" class="form-control">
-    <!-- Input for notes end -->
   </div>
-  <!-- Label and input for notes end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create transaction

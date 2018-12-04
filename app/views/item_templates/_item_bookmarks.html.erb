@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @item.bookmarks.each do |bookmark| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/bookmarks/<%= bookmark.id %>">
           <%= bookmark.item_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_bookmark_from_item/<%= bookmark.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="item_bookmarks_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "item_templates/item_bookmarks_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

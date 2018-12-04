@@ -10,21 +10,17 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "item_templates/items_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 <div class="row mb-3">
   <div class="col-md-12">
     <%= render partial: "item_templates/all_photos_map" %>
   </div>
 </div>
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -86,25 +82,18 @@
 
       <% @items.each do |item| %>
       <tr>
-        <!-- Display item.id start -->
         <td>
           <%= item.id %>
         </td>
-        <!-- Display item.id end -->
 
-        <!-- Display item.title start -->
         <td>
           <%= item.title %>
         </td>
-        <!-- Display item.title end -->
 
-        <!-- Display item.description start -->
         <td>
           <%= item.description %>
         </td>
-        <!-- Display item.description end -->
 
-        <!-- Display item.seller_id start -->
         <td>
           <% if item.poster.present? %>
             <a href="/users/<%= item.poster.id %>">
@@ -112,27 +101,19 @@
             </a>
           <% end %>
         </td>
-        <!-- Display item.seller_id end -->
 
-        <!-- Display item.price start -->
         <td>
           <%= item.price %>
         </td>
-        <!-- Display item.price end -->
 
-        <!-- Display item.address start -->
         <td>
           <%= item.address %>
         </td>
-        <!-- Display item.address end -->
 
-        <!-- Display item.photo start -->
         <td>
           <img src='<%= item.photo %>' class='img-fluid'>
         </td>
-        <!-- Display item.photo end -->
 
-        <!-- Display item.location_id start -->
         <td>
           <% if item.location.present? %>
             <a href="/locations/<%= item.location.id %>">
@@ -140,9 +121,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display item.location_id end -->
 
-        <!-- Display item.status_id start -->
         <td>
           <% if item.status.present? %>
             <a href="/statuses/<%= item.status.id %>">
@@ -150,9 +129,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display item.status_id end -->
 
-        <!-- Display item.item_type_id start -->
         <td>
           <% if item.item_type.present? %>
             <a href="/item_types/<%= item.item_type.id %>">
@@ -160,19 +137,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display item.item_type_id end -->
 
-        <!-- Display item.created_at start -->
         <td>
           <%= time_ago_in_words(item.created_at) %> ago
         </td>
-        <!-- Display item.created_at end -->
 
-        <!-- Display item.updated_at start -->
         <td>
           <%= time_ago_in_words(item.updated_at) %> ago
         </td>
-        <!-- Display item.updated_at end -->
 
         <td>
           <a href="/items/<%= item.id %>">

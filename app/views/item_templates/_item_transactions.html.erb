@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @item.transactions.each do |transaction| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/transactions/<%= transaction.id %>">
           <%= transaction.buyer_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_transaction_from_item/<%= transaction.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="item_transactions_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "item_templates/item_transactions_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 
