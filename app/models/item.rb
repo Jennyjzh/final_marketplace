@@ -1,6 +1,8 @@
 class Item < ApplicationRecord
   # Direct associations
 
+  belongs_to :status
+
   belongs_to :location
 
   has_many   :bookmarks,
