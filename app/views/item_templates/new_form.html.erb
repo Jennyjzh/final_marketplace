@@ -112,7 +112,7 @@
     </label>
 
     <!-- Input for item_type_id start -->
-    <input type="text" id="item_type_id" name="item_type_id" class="form-control">
+    <%= select_tag(:item_type_id, options_from_collection_for_select(ItemType.all, :id, :created_at, @item.item_type_id), :class => "form-control") %>
     <!-- Input for item_type_id end -->
   </div>
   <!-- Label and input for item_type_id end -->
