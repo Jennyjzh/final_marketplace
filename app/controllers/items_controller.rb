@@ -119,7 +119,7 @@ class ItemsController < ApplicationController
 
     @item.title = params.fetch("title")
     @item.description = params.fetch("description")
-    @item.seller_id = params.fetch("seller_id")
+    
     @item.price = params.fetch("price")
     @item.address = params.fetch("address")
     @item.photo = params.fetch("photo") if params.key?("photo")

@@ -27,15 +27,9 @@
   <!-- Label and input for description end -->
 
   <!-- Label and input for seller_id start -->
-  <div class="form-group">
-    <label for="seller_id">
-      Seller
-    </label>
-
-    <!-- Input for seller_id start -->
-    <%= select_tag(:seller_id, options_from_collection_for_select(User.all, :id, :email, @item.seller_id), :class => "form-control") %>
-    <!-- Input for seller_id end -->
-  </div>
+  <!-- Input for "seller_id" start -->
+  <input type="hidden" name="seller_id" value="<%= current_user.id %>">
+  <!-- Input for "seller_id" end -->
   <!-- Label and input for seller_id end -->
 
   <!-- Label and input for price start -->
