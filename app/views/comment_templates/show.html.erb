@@ -34,7 +34,11 @@
       </dt>
       <!-- Display item_id start -->
       <dd>
-        <%= @comment.item_id %>
+        <% if @comment.item.present? %>
+          <a href="/items/<%= @comment.item_id %>">
+            <%= @comment.item.title %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display item_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @comment.user_id %>
+        <% if @comment.user.present? %>
+          <a href="/users/<%= @comment.user_id %>">
+            <%= @comment.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

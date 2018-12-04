@@ -70,19 +70,31 @@
 
         <!-- Display transaction.buyer_id start -->
         <td>
-          <%= transaction.buyer.email %>
+          <% if transaction.buyer.present? %>
+            <a href="/users/<%= transaction.buyer.id %>">
+              <%= transaction.buyer.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display transaction.buyer_id end -->
 
         <!-- Display transaction.seller_id start -->
         <td>
-          <%= transaction.seller.email %>
+          <% if transaction.seller.present? %>
+            <a href="/users/<%= transaction.seller.id %>">
+              <%= transaction.seller.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display transaction.seller_id end -->
 
         <!-- Display transaction.item_id start -->
         <td>
-          <%= transaction.item.title %>
+          <% if transaction.item.present? %>
+            <a href="/items/<%= transaction.item.id %>">
+              <%= transaction.item.title %>
+            </a>
+          <% end %>
         </td>
         <!-- Display transaction.item_id end -->
 

@@ -34,7 +34,11 @@
       </dt>
       <!-- Display buyer_id start -->
       <dd>
-        <%= @transaction.buyer_id %>
+        <% if @transaction.buyer.present? %>
+          <a href="/users/<%= @transaction.buyer_id %>">
+            <%= @transaction.buyer.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display buyer_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display seller_id start -->
       <dd>
-        <%= @transaction.seller_id %>
+        <% if @transaction.seller.present? %>
+          <a href="/users/<%= @transaction.seller_id %>">
+            <%= @transaction.seller.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display seller_id end -->
 
@@ -52,7 +60,11 @@
       </dt>
       <!-- Display item_id start -->
       <dd>
-        <%= @transaction.item_id %>
+        <% if @transaction.item.present? %>
+          <a href="/items/<%= @transaction.item_id %>">
+            <%= @transaction.item.title %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display item_id end -->
 

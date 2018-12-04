@@ -102,7 +102,11 @@
 
         <!-- Display item.seller_id start -->
         <td>
-          <%= item.poster.email %>
+          <% if item.poster.present? %>
+            <a href="/users/<%= item.poster.id %>">
+              <%= item.poster.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display item.seller_id end -->
 
@@ -126,19 +130,31 @@
 
         <!-- Display item.location_id start -->
         <td>
-          <%= item.location.created_at %>
+          <% if item.location.present? %>
+            <a href="/locations/<%= item.location.id %>">
+              <%= item.location.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display item.location_id end -->
 
         <!-- Display item.status_id start -->
         <td>
-          <%= item.status.created_at %>
+          <% if item.status.present? %>
+            <a href="/statuses/<%= item.status.id %>">
+              <%= item.status.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display item.status_id end -->
 
         <!-- Display item.item_type_id start -->
         <td>
-          <%= item.item_type.created_at %>
+          <% if item.item_type.present? %>
+            <a href="/item_types/<%= item.item_type.id %>">
+              <%= item.item_type.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display item.item_type_id end -->
 

@@ -56,7 +56,11 @@
       </dt>
       <!-- Display seller_id start -->
       <dd>
-        <%= @item.seller_id %>
+        <% if @item.poster.present? %>
+          <a href="/users/<%= @item.seller_id %>">
+            <%= @item.poster.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display seller_id end -->
 
@@ -94,7 +98,11 @@
       </dt>
       <!-- Display location_id start -->
       <dd>
-        <%= @item.location_id %>
+        <% if @item.location.present? %>
+          <a href="/locations/<%= @item.location_id %>">
+            <%= @item.location.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display location_id end -->
 
@@ -103,7 +111,11 @@
       </dt>
       <!-- Display status_id start -->
       <dd>
-        <%= @item.status_id %>
+        <% if @item.status.present? %>
+          <a href="/statuses/<%= @item.status_id %>">
+            <%= @item.status.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display status_id end -->
 
@@ -112,7 +124,11 @@
       </dt>
       <!-- Display item_type_id start -->
       <dd>
-        <%= @item.item_type_id %>
+        <% if @item.item_type.present? %>
+          <a href="/item_types/<%= @item.item_type_id %>">
+            <%= @item.item_type.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display item_type_id end -->
 
