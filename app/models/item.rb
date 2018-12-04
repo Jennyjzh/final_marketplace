@@ -1,6 +1,8 @@
 class Item < ApplicationRecord
   # Direct associations
 
+  belongs_to :location
+
   has_many   :bookmarks,
              :dependent => :destroy
 
