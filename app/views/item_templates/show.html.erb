@@ -74,7 +74,9 @@
       </dt>
       <!-- Display address start -->
       <dd>
-        <%= @item.address %>
+        <div>
+          <%= render partial: "item_templates/one_photo_map" %>
+        </div>
       </dd>
       <!-- Display address end -->
 
