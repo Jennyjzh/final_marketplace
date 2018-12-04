@@ -1,0 +1,20 @@
+<h1>
+  Edit item type #<%= @item_type.id %>
+</h1>
+
+<hr>
+
+<!-- Form item_type start -->
+<form action="/update_item_type/<%= @item_type.id %>" method="post">
+<!-- Form item_type end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update item type
+  </button>
+</form>
+
+<hr>
+
+<a href="/item_types">
+  Go back
+</a>

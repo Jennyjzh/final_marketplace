@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Item type resource:
+
+  # CREATE
+  get("/item_types/new", { :controller => "item_types", :action => "new_form" })
+  post("/create_item_type", { :controller => "item_types", :action => "create_row" })
+
+  # READ
+  get("/item_types", { :controller => "item_types", :action => "index" })
+  get("/item_types/:id_to_display", { :controller => "item_types", :action => "show" })
+
+  # UPDATE
+  get("/item_types/:prefill_with_id/edit", { :controller => "item_types", :action => "edit_form" })
+  post("/update_item_type/:id_to_modify", { :controller => "item_types", :action => "update_row" })
+
+  # DELETE
+  get("/delete_item_type/:id_to_remove", { :controller => "item_types", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Comment resource:
 
   # CREATE

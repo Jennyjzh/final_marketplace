@@ -1,0 +1,32 @@
+<!-- Validation failure messages -->
+<% if @item_type.present? %>
+  <% if @item_type.errors.any? %>
+    <% @item_type.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new item type
+</h1>
+
+
+<hr>
+
+<!-- Form item_type start -->
+<form action="/create_item_type" method="post">
+<!-- Form item_type end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create item type
+  </button>
+</form>
+
+<hr>
+
+<a href="/item_types">
+  Go back
+</a>
