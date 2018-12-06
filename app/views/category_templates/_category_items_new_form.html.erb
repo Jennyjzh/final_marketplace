@@ -58,7 +58,7 @@
     <%= select_tag(:status_id, options_from_collection_for_select(Status.all, :id, :created_at, @item.status_id), :class => "form-control") %>
   </div>
 
-  <input type="hidden" name="item_type_id" value="<%= @item_type.id %>">
+  <input type="hidden" name="item_type_id" value="<%= @category.id %>">
 
   <button class="btn btn-block btn-outline-secondary">
     Create item

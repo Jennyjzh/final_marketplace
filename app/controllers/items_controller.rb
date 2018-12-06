@@ -102,7 +102,7 @@ class ItemsController < ApplicationController
     end
   end
 
-  def create_row_from_item_type
+  def create_row_from_category
     @item = Item.new
 
     @item.title = params.fetch("title")
@@ -118,7 +118,7 @@ class ItemsController < ApplicationController
     if @item.valid?
       @item.save
 
-      redirect_to("/item_types/#{@item.item_type_id}", notice: "Item created successfully.")
+      redirect_to("/categories/#{@item.item_type_id}", notice: "Item created successfully.")
     else
       render("item_templates/new_form_with_errors.html.erb")
     end
@@ -181,7 +181,7 @@ class ItemsController < ApplicationController
 
     @item.destroy
 
-    redirect_to("/item_types/#{@item.item_type_id}", notice: "Item deleted successfully.")
+    redirect_to("/categories/#{@item.item_type_id}", notice: "Item deleted successfully.")
   end
 
   def destroy_row

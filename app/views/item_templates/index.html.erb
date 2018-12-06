@@ -132,8 +132,8 @@
 
         <td>
           <% if item.item_type.present? %>
-            <a href="/item_types/<%= item.item_type.id %>">
-              <%= item.item_type.created_at %>
+            <a href="/categories/<%= item.item_type.id %>">
+              <%= item.item_type.category %>
             </a>
           <% end %>
         </td>
