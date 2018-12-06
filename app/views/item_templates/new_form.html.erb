@@ -70,7 +70,7 @@
       Item type
     </label>
 
-    <%= select_tag(:item_type_id, options_from_collection_for_select(ItemType.all, :id, :created_at, @item.item_type_id), :class => "form-control") %>
+    <%= select_tag(:item_type_id, options_from_collection_for_select(Category.all, :id, :category, @item.item_type_id), :class => "form-control") %>
   </div>
 
   <button class="btn btn-block btn-outline-secondary">

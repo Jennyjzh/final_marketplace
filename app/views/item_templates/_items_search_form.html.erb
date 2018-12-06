@@ -7,15 +7,8 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :price, "Price" %>
-    <div class="row">
-      <div class='col-md-6 mb-1'>
-        <%= f.text_field :price_gteq, :class => "form-control", :placeholder => "Price greater than or equal to" %>
-      </div>
-      <div class='col-md-6'>
-        <%= f.text_field :price_lteq, :class => "form-control", :placeholder => "Price less than or equal to" %>
-      </div>
-    </div>
+    <%= f.label :price_cont, "Price contains" %>
+    <%= f.text_field :price_cont, :class => "form-control", :placeholder => "Price contains" %>
   </div>
 
   <div class="form-group">
@@ -150,44 +143,9 @@
   </script>
 
   <div class="form-group">
-    <%= f.label :created_at, "ItemType Created at" %>
-    <div class="row">
-      <div class='col-md-6 mb-1'>
-        <div class='input-group date' id='item_typegteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :item_type_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "ItemType Created at greater than or equal to", :data => {:target => '#item_typegteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#item_typegteqcreated_atPicker' data-toggle="datetimepicker">
-            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-          </div>
-        </div>
-      </div>
-
-      <div class='col-md-6'>
-        <div class='input-group date' id='item_typelteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :item_type_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "ItemType Created at less than or equal to", :data => {:target => '#item_typelteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#item_typelteqcreated_atPicker' data-toggle="datetimepicker">
-            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%= f.label :item_type_category_cont, "Category category contains" %>
+    <%= f.text_field :item_type_category_cont, :class => "form-control", :placeholder => "Category category contains" %>
   </div>
-  <script type="text/javascript">
-      $(function () {
-          $('#item_typegteqcreated_atPicker').datetimepicker({
-              format: 'YYYY-MM-DD hh:mm:SS'
-          });
-          $('#item_typelteqcreated_atPicker').datetimepicker({
-              useCurrent: false,
-              format: 'YYYY-MM-DD hh:mm:SS'
-          });
-          $('#item_typegteqcreated_atPicker').on("dp.change", function (e) {
-              $('#item_typelteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
-          });
-          $('#item_typelteqcreated_atPicker').on("dp.change", function (e) {
-              $('#item_typegteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
-          });
-      });
-  </script>
 
 
   <%= f.submit :class => "btn btn-primary btn-block mb-1" %>

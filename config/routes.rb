@@ -2,22 +2,22 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root :to => "items#index"
-  # Routes for the Item type resource:
+  # Routes for the Category resource:
 
   # CREATE
-  get("/item_types/new", { :controller => "item_types", :action => "new_form" })
-  post("/create_item_type", { :controller => "item_types", :action => "create_row" })
+  get("/categories/new", { :controller => "categories", :action => "new_form" })
+  post("/create_category", { :controller => "categories", :action => "create_row" })
 
   # READ
-  get("/item_types", { :controller => "item_types", :action => "index" })
-  get("/item_types/:id_to_display", { :controller => "item_types", :action => "show" })
+  get("/categories", { :controller => "categories", :action => "index" })
+  get("/categories/:id_to_display", { :controller => "categories", :action => "show" })
 
   # UPDATE
-  get("/item_types/:prefill_with_id/edit", { :controller => "item_types", :action => "edit_form" })
-  post("/update_item_type/:id_to_modify", { :controller => "item_types", :action => "update_row" })
+  get("/categories/:prefill_with_id/edit", { :controller => "categories", :action => "edit_form" })
+  post("/update_category/:id_to_modify", { :controller => "categories", :action => "update_row" })
 
   # DELETE
-  get("/delete_item_type/:id_to_remove", { :controller => "item_types", :action => "destroy_row" })
+  get("/delete_category/:id_to_remove", { :controller => "categories", :action => "destroy_row" })
 
   #------------------------------
 
@@ -131,7 +131,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/items/new", { :controller => "items", :action => "new_form" })
   post("/create_item", { :controller => "items", :action => "create_row" })
-  post("/create_item_from_item_type", { :controller => "items", :action => "create_row_from_item_type" })
+  post("/create_item_from_category", { :controller => "items", :action => "create_row_from_category" })
   post("/create_item_from_status", { :controller => "items", :action => "create_row_from_status" })
   post("/create_item_from_location", { :controller => "items", :action => "create_row_from_location" })
 

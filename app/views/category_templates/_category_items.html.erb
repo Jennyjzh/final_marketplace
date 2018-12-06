@@ -2,20 +2,20 @@
   <div class="card-header d-flex align-items-center justify-content-between">
     Items
 
-    <a data-toggle="collapse" href="#item_type_items_new_form">
+    <a data-toggle="collapse" href="#category_items_new_form">
       Add item
     </a>
   </div>
 
   <ul class="list-group list-group-flush">
-    <% @item_type.items.each do |item| %>
+    <% @category.items.each do |item| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
         <a href="/items/<%= item.id %>">
           <%= item.title %>
         </a>
 
         <%if current_user == item.poster %>
-          <a href="/delete_item_from_item_type/<%= item.id %>">
+          <a href="/delete_item_from_category/<%= item.id %>">
             Delete
           </a>
         <% end %>
@@ -24,8 +24,8 @@
     <% end %>
 
     <div class="card-footer">
-      <div class="collapse" id="item_type_items_new_form">
-        <%= render partial: "item_type_templates/item_type_items_new_form" %>
+      <div class="collapse" id="category_items_new_form">
+        <%= render partial: "category_templates/category_items_new_form" %>
       </div>
     </div>
 
