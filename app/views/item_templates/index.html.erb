@@ -117,7 +117,7 @@
         <td>
           <% if item.location.present? %>
             <a href="/locations/<%= item.location.id %>">
-              <%= item.location.created_at %>
+              <%= item.location.location %>
             </a>
           <% end %>
         </td>
@@ -125,15 +125,15 @@
         <td>
           <% if item.status.present? %>
             <a href="/statuses/<%= item.status.id %>">
-              <%= item.status.created_at %>
+              <%= item.status.status %>
             </a>
           <% end %>
         </td>
 
         <td>
           <% if item.item_type.present? %>
-            <a href="/item_types/<%= item.item_type.id %>">
-              <%= item.item_type.created_at %>
+            <a href="/categories/<%= item.item_type.id %>">
+              <%= item.item_type.category %>
             </a>
           <% end %>
         </td>

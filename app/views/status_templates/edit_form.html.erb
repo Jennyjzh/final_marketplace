@@ -6,6 +6,14 @@
 
 <form action="/update_status/<%= @status.id %>" method="post">
 
+  <div class="form-group">
+    <label for="status">
+      Status
+    </label>
+
+    <input type="text" id="status" name="status" class="form-control" value="<%= @status.status %>">
+  </div>
+
   <button class="btn btn-block btn-outline-secondary">
     Update status
   </button>

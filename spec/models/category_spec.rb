@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ItemType, type: :model do
+RSpec.describe Category, type: :model do
   
     describe "Direct Associations" do
 
