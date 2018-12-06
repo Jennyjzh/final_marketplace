@@ -22,6 +22,7 @@ class StatusesController < ApplicationController
   def create_row
     @status = Status.new
 
+    @status.status = params.fetch("status")
 
     if @status.valid?
       @status.save
@@ -41,6 +42,7 @@ class StatusesController < ApplicationController
   def update_row
     @status = Status.find(params.fetch("id_to_modify"))
 
+    @status.status = params.fetch("status")
 
     if @status.valid?
       @status.save

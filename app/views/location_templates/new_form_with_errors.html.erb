@@ -17,6 +17,14 @@
 
 <form action="/create_location" method="post">
 
+  <div class="form-group">
+    <label for="location">
+      Location
+    </label>
+
+    <input type="text" id="location" name="location" class="form-control" value="<%= @location.location %>">
+  </div>
+
   <button class="btn btn-block btn-outline-secondary">
     Create location
   </button>

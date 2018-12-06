@@ -23,7 +23,8 @@ class Item < ApplicationRecord
 
   # Direct associations
 
-  belongs_to :item_type
+  belongs_to :item_type,
+             :class_name => "Category"
 
   belongs_to :status
 
